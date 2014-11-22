@@ -27,6 +27,7 @@ let mapleader=","
 inoremap \\ <Esc>
 
 
+
 " display
 if has("gui_running")
         se t_Co=256
@@ -34,6 +35,7 @@ if has("gui_running")
         se guifont=inconsolata:h24
         se transparency=15
 endif
+
 
 " misc
 syntax enable                
@@ -63,7 +65,15 @@ se encoding=utf-8
 se fenc=utf-8
 se nowildignorecase
 se nu
+se expandtab
+se shiftwidth=4                
+se softtabstop=4
+
+" dictionary
+au FileType java       call AddJavaDict()
+function AddJavaDict()
+    set dict+=~/.vim/dict/java.txt
+    set complete+=k
+endfunction
 
 " plugin
-
-
