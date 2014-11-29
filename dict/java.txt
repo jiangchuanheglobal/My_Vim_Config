@@ -3,6 +3,7 @@ abstract
 AbstractMethodError
 ArithmeticException
 ArrayIndexOutOfBoundsException
+ArrayList
 ArrayStoreException
 assert
 AssertionError
@@ -120,6 +121,7 @@ short
 Short
 signed
 sizeof
+size
 StackOverflowError
 StackTraceElement
 static

@@ -12,10 +12,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
-
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 
 call vundle#end()            
 filetype plugin indent on   
@@ -25,7 +28,7 @@ set timeoutlen=250
 nmap ' ,
 let mapleader=","
 inoremap \\ <Esc>
-
+map <Leader>t :NERDTreeToggle<CR>
 
 
 " display
@@ -46,10 +49,11 @@ filetype plugin on
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+se foldlevel=100            
 se hlsearch
 se smartcase
 se noignorecase
-se nowrapscan
+se wrapscan
 se magic
 se incsearch  
 se hidden
@@ -68,6 +72,7 @@ se nu
 se expandtab
 se shiftwidth=4                
 se softtabstop=4
+set wildchar=<Tab> wildmenu wildmode=full
 
 " dictionary
 au FileType java       call AddJavaDict()
@@ -76,4 +81,3 @@ function AddJavaDict()
     set complete+=k
 endfunction
 
-" plugin
