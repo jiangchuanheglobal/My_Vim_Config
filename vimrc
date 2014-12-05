@@ -19,6 +19,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+Bundle 'vim-scripts/Auto-Pairs'
 
 call vundle#end()            
 filetype plugin indent on   
@@ -29,6 +30,10 @@ nmap ' ,
 let mapleader=","
 inoremap \\ <Esc>
 map <Leader>t :NERDTreeToggle<CR>
+imap <C-J> <Down>
+imap <C-K> <Up>
+imap <C-H> <Left>
+imap <C-L> <Right>
 
 
 " display
@@ -72,12 +77,17 @@ se nu
 se expandtab
 se shiftwidth=4                
 se softtabstop=4
-set wildchar=<Tab> wildmenu wildmode=full
+se wildchar=<Tab> wildmenu wildmode=full
 
 " dictionary
+au FileType c          call AddCDict()
 au FileType java       call AddJavaDict()
+
 function AddJavaDict()
     set dict+=~/.vim/dict/java.txt
     set complete+=k
 endfunction
-
+function AddCDict()
+    set dict+=~/.vim/dict/c.txt
+    set complete+=k
+endfunction

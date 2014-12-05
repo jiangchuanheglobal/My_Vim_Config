@@ -1,4 +1,5 @@
-a
+array
+arraycopy
 abstract
 AbstractMethodError
 ArithmeticException
@@ -80,6 +81,7 @@ InterruptedException
 keyword
 LinkageError
 long
+length
 Long
 match
 Math
@@ -130,6 +132,7 @@ StrictMath
 String
 StringBuffer
 StringIndexOutOfBoundsException
+System
 struct
 super
 switch
