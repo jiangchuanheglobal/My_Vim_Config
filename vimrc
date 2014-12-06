@@ -32,9 +32,7 @@ inoremap \\ <Esc>
 map <Leader>t :NERDTreeToggle<CR>
 imap <C-J> <Down>
 imap <C-K> <Up>
-imap <C-H> <Left>
 imap <C-L> <Right>
-
 
 " display
 if has("gui_running")
@@ -82,12 +80,19 @@ se wildchar=<Tab> wildmenu wildmode=full
 " dictionary
 au FileType c          call AddCDict()
 au FileType java       call AddJavaDict()
+au FileType php        call AddPhpDict()
 
 function AddJavaDict()
     set dict+=~/.vim/dict/java.txt
     set complete+=k
+    set tags+=/Users/jiangchuan/.vim/ctags/tags
 endfunction
 function AddCDict()
     set dict+=~/.vim/dict/c.txt
+    set complete+=k
+endfunction
+
+function AddPhpDict() 
+    set dict+=~/.vim/dict/php.txt
     set complete+=k
 endfunction

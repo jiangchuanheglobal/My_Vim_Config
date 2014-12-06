@@ -1,0 +1,19 @@
+class
+public
+global
+throw
+return
+Exception
+if
+else
+else if
+function
+new
+catch
+die
+date
+require_once
+header
+static
+empty
+
